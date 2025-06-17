@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e
 
 # Variables con valores por defecto si no están definidas
 DHOST=${DHOST:-"127.0.0.1"}
@@ -34,7 +35,7 @@ cat > /etc/v2ray/config.json <<EOF
     {
       "protocol": "freedom",
       "settings": {
-        "redirect": "$DHOST:$DPORT"
+        "redirect": "${DHOST}:${DPORT}"
       }
     }
   ]
